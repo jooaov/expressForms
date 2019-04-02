@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lista de usuarios</title>
+</head>
+<body>
+    <br/>
+
+        <% let cont = 1 %>
+        <% users.forEach(user => { %>
+        <tbody>
+        <tr>
+            <th scope="row">
+            <%= cont++ %></th>
+            <td><%= user.name %></td>
+            <td><%= user.sub_name %></td>
+            <td><%= user.age%></td>
+            <td><%= user._id%></td>
+    <a href = "/delete/<%= user._id%>"><button type="button">APAGAR</button></a>
+    <a href = "/update/<%= user._id%>"><button type="button">update</button></a>
+    <br/>
+    </tr>
+    <%})%>
+    <%if(cont==1){%>
+            <%= "não existe usuario na lista"%>
+            <a href = "/"><button type="button">criar usuario</button></a>
+            <%}%>
+</body>
+</html>
